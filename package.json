@@ -1,5 +1,7 @@
 {
   "name": "today",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "babel": "^6.23.0"
+  }
 }

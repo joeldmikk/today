@@ -17,13 +17,13 @@
   </div>
 
   <div class="field">
-    <%= form.label :body %>
-    <%= form.text_area :body, id: :post_body %>
+    <%= form.label :content_type %>
+    <%= form.select :content_type, Post.content_types.keys.map { |p| [p.humanize, p] }, id: :post_content_type %>
   </div>
 
   <div class="field">
-    <%= form.label :image %>
-    <%= form.text_field :image, id: :post_image %>
+    <%= form.label :body %>
+    <%= form.text_area :body, id: :post_body %>
   </div>
 
   <div class="field">

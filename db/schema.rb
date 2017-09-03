@@ -10,7 +10,31 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170827073927) do
+ActiveRecord::Schema.define(version: 20170901032737) do
+
+  create_table "audios", force: :cascade do |t|
+    t.integer "post_id"
+    t.string "src"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["post_id"], name: "index_audios_on_post_id"
+  end
+
+  create_table "images", force: :cascade do |t|
+    t.integer "post_id"
+    t.string "src"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["post_id"], name: "index_images_on_post_id"
+  end
+
+  create_table "links", force: :cascade do |t|
+    t.integer "post_id"
+    t.string "src"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["post_id"], name: "index_links_on_post_id"
+  end
 
   create_table "posts", force: :cascade do |t|
     t.string "title"
@@ -19,6 +43,7 @@ ActiveRecord::Schema.define(version: 20170827073927) do
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "content_type", default: 0
     t.index ["user_id"], name: "index_posts_on_user_id"
   end
 
@@ -37,6 +62,22 @@ ActiveRecord::Schema.define(version: 20170827073927) do
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  end
+
+  create_table "videos", force: :cascade do |t|
+    t.integer "post_id"
+    t.string "src"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["post_id"], name: "index_videos_on_post_id"
+  end
+
+  create_table "words", force: :cascade do |t|
+    t.integer "post_id"
+    t.text "body"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["post_id"], name: "index_words_on_post_id"
   end
 
 end
