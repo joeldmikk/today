@@ -31,8 +31,8 @@ gem 'jbuilder', '~> 2.5'
 # gem 'bcrypt', '~> 3.1.7'
 
 gem 'devise' # user authentication and sessions
-# gem 'react-rails' # use react for front end
-gem 'react_on_rails'
+
+gem 'rack-cors', :require => 'rack/cors' #advanced cors features for API
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
